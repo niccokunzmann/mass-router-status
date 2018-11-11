@@ -22,13 +22,14 @@ done
 
 for index in ${!ips[*]}; do
     ip="${ips[$index]}"
+    short_ip="`echo "$ip" | grep -oE '[0-9]+\.[0-9]+$'`"
     pid="${pids[$index]}"
     wait $pid
     status="$?"
     if [ "$status" == "0" ]; then
-        echo -en "${GREEN}$ip${NC} "
+        echo -en "${GREEN}$short_ip${NC} "
     else
-        echo -en "${RED}$ip${NC} "
+        echo -en "${RED}$short_ip${NC} "
     fi
 done
 
