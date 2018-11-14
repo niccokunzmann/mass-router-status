@@ -15,7 +15,7 @@ pids=()
 for index in ${!ips[*]}; do
     ip="${ips[$index]}"
     (
-        ./check-router.sh "$ip" &>>/dev/null 
+        ./check-router.sh "$ip" "$@" &>>/dev/null 
     ) &
     pids[$index]=$!
 done
