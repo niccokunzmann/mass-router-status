@@ -5,9 +5,14 @@ cd "`dirname \"$0\"`"
 
 export IP="$1"
 export PASSWORD="`cat password.txt`"
+shift
+args="$@"
+
+echo x${args}x
 
 function chosen() {
-    echo "$@" | grep "$1" || [ -z "$1" ]
+    echo "$args" | grep "$1" || [ -z "$args" ]
+    return $?
 }
 
 # check the router status
