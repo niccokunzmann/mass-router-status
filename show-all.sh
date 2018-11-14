@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Arguments:
+# - no arguments: ping and ssh
+# - ssh: route to Internet exists
+# - ping: router can be pinged
+#
+
 cd "`dirname \"$0\"`"
 
 while true; do
