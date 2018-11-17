@@ -30,7 +30,7 @@ set password [lindex $argv 1]
 #			and when finished
 #	-p		Pattern to use for payload
 
-spawn ssh "root\@$ip" ping -c 1 -w 5 89.233.43.71
+spawn ssh "root\@$ip" ping -c 1 -w 5 8.8.8.8
 
 expect "assword:"
 
